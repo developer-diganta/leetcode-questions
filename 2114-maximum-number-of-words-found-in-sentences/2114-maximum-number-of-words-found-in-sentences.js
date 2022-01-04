@@ -4,10 +4,11 @@
  */
 
 var mostWordsFound = function(sentences) {
-    var len = 0;
-    sentences.map((x)=>{
-        const a = x.split(" ");
-        len = a.length>len?a.length:len;
-    })
-    return len;
+  let a = [];
+
+  for (let i = 0; i < sentences.length; i++) {
+    a.push(sentences[i].split(" ").length);
+  }
+
+  return Math.max(...a);
 };
