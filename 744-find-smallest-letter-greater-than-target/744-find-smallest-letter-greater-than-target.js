@@ -4,8 +4,8 @@
  * @return {character}
  */
 var nextGreatestLetter = function(letters, target) {
-    s=0,e=letters.length-1;
-    m=0
+    var s=0,e=letters.length-1;
+    var m=0
     while(s<=e){
         m=s+Math.floor((e-s)/2)
         if(letters[m]<=target){
