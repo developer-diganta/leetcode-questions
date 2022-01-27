@@ -43,4 +43,3 @@ function findPivot(nums){
     return -1;
 }
 
-console.log(binarySearch([1],0,0,0));
