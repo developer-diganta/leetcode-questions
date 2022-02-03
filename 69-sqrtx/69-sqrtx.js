@@ -18,5 +18,5 @@ var mySqrt = function(x) {
         else
             e=mid-1;
     }
-    return ans;
+    return s-1;
 };
