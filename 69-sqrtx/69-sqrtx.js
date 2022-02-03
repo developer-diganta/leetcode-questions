@@ -5,7 +5,6 @@
 var mySqrt = function(x) {
     var s = 0;
     var e=x;
-    var ans=0;
     while(s<=e){
         var mid = Math.floor((s+e)/2);
         if(mid*mid===x){
@@ -13,7 +12,6 @@ var mySqrt = function(x) {
         }
         else if(mid*mid<x){
             s=mid+1;
-            ans=mid
         }
         else
             e=mid-1;
