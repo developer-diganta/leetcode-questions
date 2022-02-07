@@ -9,12 +9,7 @@ function get_X_greater(s1, s2,l){
         }
         return true;
     }
-function get_Y_greater(s1, s2, l){
-        for(var i=l; i<s1.length(); i++){
-            if(s1[i] > s2[i]) return false;
-        }
-        return true;
-    }
+
     
 var checkIfCanBreak = function(s1, s2) {
     s3=s1.split("").sort().reverse();
