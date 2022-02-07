@@ -3,7 +3,7 @@
  * @param {string} s2
  * @return {boolean}
  */
-function get_X_greater(s1, s2,l){
+function get_grt(s1, s2,l){
         for(var i=l; i<s1.length; i++){
             if(s2[i] > s1[i]) return false;
         }
@@ -16,15 +16,15 @@ var checkIfCanBreak = function(s1, s2) {
     s4=s2.split("").sort().reverse();
     var cmp;
     var i=0;
-    var flag=true;
+    var flag;
     for(;i<s3.length;i++)
     {
         if(s3[i]!==s4[i]){
         if(s3[i]>s4[i]){
-           flag = get_X_greater(s3,s4,i);
+           flag = get_grt(s3,s4,i);
         }
         else{
-            flag = get_X_greater(s4,s3,i);
+            flag = get_grt(s4,s3,i);
         }
             break;
         }
