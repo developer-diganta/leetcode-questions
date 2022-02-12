@@ -1,60 +1,50 @@
 
 class Solution {
 public:
-    bool isSafe(vector<vector<string>> board,int r,int c,int n){
-        for(int i=0;i<r;i++){
-            if(board[i][c]=="Q")
-                return false;
-        }
-        int maxLeft = min(c,r);
-        for(int i=1;i<=maxLeft;i++){
-            if(r-i >=0 && c-i>=0 && board[r-i][c-i]=="Q"){
-                return false;
-            }
-        }
-        int maxRight = min(r,n-c-1);
-        for(int i=1;i<=maxRight;i++){
-            if(c+i<n && r-i >=0 && board[r-i][c+i]=="Q"){
-                return false;
-            }
-        }
-        return true;
-    }
-    void queen(vector<vector<string>> board, int r, vector<vector<string>> &ans,int n){
-        if(r==n){
-            vector<string> a;
-            for(int i=0;i<n;i++){
-                string s = "";
-                for(int j=0;j<n;j++){
-                    s+=board[i][j];
-                }
-                a.push_back(s);
-            }
-            ans.push_back(a);
-            return;
-        }
-        for(int c=0;c<n;c++){
-            if(isSafe(board,r,c,n)){
-                board[r][c] = "Q";
-                queen(board,r+1,ans,n);
-                board[r][c] = ".";
-            }
-        }
-        // return;
+    vector<vector<string>> solveNQueens(int n) {
+        vector<vector<string>> results;
+
+        vector<string> positions(n, string(n, '.'));
+        
+        int row = 0;
+        
+        NQueens(results, positions, n, row);
+        
+        return results;
     }
     
-    vector<vector<string>> solveNQueens(int n) {
-vector<vector<string>> board;
-        vector<vector<string>> ans;
-        for(int i=0;i<n;i++){
-            vector<string>s;
-            for(int j=0;j<n;j++){
-                s.push_back(".");
-            }
-            board.push_back(s);
+    void NQueens(vector<vector<string>> &results, vector<string> &positions, int &n, int row) {
+        if(row == n) {
+            results.push_back(positions);
+            return;
         }
-        queen(board,0,ans,n);
-        return ans;
+        
+        for(int col = 0; col < n; ++col) {
+            if(IsQueenSafe(positions, row, col, n) == true) {
+                positions[row][col] = 'Q';
+                NQueens(results, positions, n, row + 1);
+                positions[row][col] = '.';
+            }
+        }
+        
+    }
+    
+    bool IsQueenSafe(vector<string> &positions, int row, int col, int &n) {
+        for(int i = row - 1, j = col; i >= 0; --i) {
+            if(positions[i][j] == 'Q')
+                return false;
+        }
+        
+        for(int i = row - 1, j = col - 1; i >= 0 && j >= 0; --i, --j) {
+            if(positions[i][j] == 'Q')
+                return false;
+        }
+        
+        for(int i = row - 1, j = col + 1; i >= 0 && j <= (n - 1); --i, ++j) {
+            if(positions[i][j] == 'Q')
+                return false;
+        }
+        return true;
     }
 
 };
