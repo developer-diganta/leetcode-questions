@@ -7,11 +7,11 @@
 
 var combinationSum = function(candidates, target) {
 
-var obj = {ans:[]}
+var ans = [];
     var abc = (curr,i,t) => {
         if(t===target){
             console.log(curr)
-            obj.ans.push([...curr]);
+            ans.push([...curr]);
             return;
         }
         if(i>=candidates.length || t>target){
@@ -25,6 +25,6 @@ var obj = {ans:[]}
     // var curr = [];
 
     abc([],0,0);
-    return obj.ans;
+    return ans;
     
 };
