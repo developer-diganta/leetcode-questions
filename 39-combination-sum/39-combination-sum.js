@@ -17,10 +17,17 @@ var ans = [];
         if(i>=candidates.length || t>target){
             return ;
         }
-        curr.push(candidates[i]);
-        abc(curr,i,t+candidates[i]);
-        curr.pop();
-        abc(curr,i+1,t);
+        var prev = -1;
+        for(var x=i;x<candidates.length;x++){
+            if(prev!==candidates[x])
+            {
+                curr.push(candidates[x]);
+                abc(curr,x,t+candidates[x]);
+                curr.pop();
+                prev = candidates[x]
+            }
+        }
+
     }
     // var curr = [];
 
