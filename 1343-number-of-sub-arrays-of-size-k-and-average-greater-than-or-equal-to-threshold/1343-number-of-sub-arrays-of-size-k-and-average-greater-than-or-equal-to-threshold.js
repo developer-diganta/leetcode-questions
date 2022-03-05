@@ -5,19 +5,19 @@
  * @return {number}
  */
 var numOfSubarrays = function(arr, k, threshold) {
- let max = k * threshold;
-    let q = 0;
-    let j = 0;
-    let result = 0;
-    for(let i=0; i<arr.length; i++){
-        q = q + arr[i];
-        if(i+1-j == k){
-            if(q >= max){
-                result++;
-            }
-            q = q - arr[j];
-            j++;
+    var pre=[];
+    var t= threshold*k;
+    for(var i=0;i<=arr.length-k;i++){
+        var no=0;
+        for(var j=i;j<i+k;j++){
+            no=no+arr[j];
         }
+        pre.push(no);
     }
-    return result;
+    var c=0;
+    for(var i=0;i<pre.length;i++){
+        if(pre[i]>=t)
+            c++;
+    }
+    return c;
 };
