@@ -15,7 +15,7 @@ TreeNode* ans;
     {
         if (cloned == NULL)
             return cloned;
-        if (cloned->val == target->val) // If target node found in cloned tree save it into a variable.
+        if (cloned->val == target->val)
             ans = cloned;
         getTargetCopy(original, cloned->left, target);
         getTargetCopy(original, cloned->right, target);
