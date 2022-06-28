@@ -12,7 +12,7 @@ var minDeletions = function(s) {
     let set = new Set();
     let res = 0;
     for (let i = 0; i < values.length; i++) {
-        while (set.has(values[i]) && values[i] !== 0) { // O(n^2)
+        while (set.has(values[i]) && values[i] !== 0) { 
             values[i]--;
             res++;
         }
