@@ -6,8 +6,8 @@
 <p><strong>Example 1:</strong></p>
 <img alt="" src="https://assets.leetcode.com/uploads/2020/11/26/tmp-tree.jpg" style="width: 400px; height: 277px;">
 <pre><strong>Input:</strong> root = [3,9,20,null,null,15,7]
-<strong>Output:</strong> 3
-</pre>
+<strong>Output :</strong> 3
+</pre> 
 
 <p><strong>Example 2:</strong></p>
 
