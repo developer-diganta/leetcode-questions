@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/longest-string-chain/">1048. Longest String Chain</a></h2><h3>Medium</h3><hr><div><p>You are given an array of <code>words</code> where each word consists of lowercase English letters.</p>
+<h2><a href="https://leetcode.com/problems/longest-string-chain/">1048. Longest String Chain</a></h2><h3>Medium</h3><hr><div><p>You are given an array of <code>words</code> where each word consists of lowercase English letters</p>
 
 <p><code>word<sub>A</sub></code> is a <strong>predecessor</strong> of <code>word<sub>B</sub></code> if and only if we can insert <strong>exactly one</strong> letter anywhere in <code>word<sub>A</sub></code> <strong>without changing the order of the other characters</strong> to make it equal to <code>word<sub>B</sub></code>.</p>
 
