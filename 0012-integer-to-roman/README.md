@@ -7,7 +7,7 @@ X             10
 L             50
 C             100
 D             500
-M             1000</pre>
+M             1000 </pre>
 
 <p>For example,&nbsp;<code>2</code> is written as <code>II</code>&nbsp;in Roman numeral, just two one's added together. <code>12</code> is written as&nbsp;<code>XII</code>, which is simply <code>X + II</code>. The number <code>27</code> is written as <code>XXVII</code>, which is <code>XX + V + II</code>.</p>
 
